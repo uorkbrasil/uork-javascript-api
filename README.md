@@ -10,7 +10,7 @@ If you don't have the Gitub CLI installed, <a href="https://git-scm.com/download
 After having installed, you can execute the command in your terminal/cmd.
 
 ```
-git clone https://github.com/henriqueamorimm/uork-javascript-api uork-api-js
+git clone https://github.com/uorkbrasil/uork-javascript-api uork-api-js
 ```
 
 ### Executing the start file
