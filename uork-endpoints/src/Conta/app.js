@@ -1,34 +1,40 @@
 const axios = require('axios');
 const readline = require('readline');
 
-const BASE_URL = 'https://uork.org/search/status/check-account.php?id=';
+const apiKey = 'FqFQiW9OmKgINpImjpkM6VywPxwGOXYXXNFteoDC2UtZDzd9T3p_DXuH4rEb';
+const api = `https://uork.org/search/status/check-account.php?apikey=${apiKey}&id=`;
 
-function getUserInput(question) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+function getUserInput(quest) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    
+});
 
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      rl.close();
-      resolve(answer);
+
+return new Promise((resolve) => {
+    rl.question(quest, (resposta) => {
+        rl.close();
+        resolve(resposta);
     });
-  });
+});
 }
+
 
 async function main() {
-  try {
-    const userInput = await getUserInput('Insira o ID ou e-mail do usuário: ');
+    try {
+        const userInput = await getUserInput('Insira o ID ou e-mail do usuário: ');
+       
+        const api2 = api + userInput;
+        const response = await axios.get(api2);
 
-    const url = BASE_URL + userInput;
-    const response = await axios.get(url);
-    const status = response.data;
+        const info = response.data;
 
-    console.log(status);
-  } catch (error) {
-    console.error('Ocorreu um erro:', error.message);
-  }
-}
+        console.log(info);
+    } catch (error) {
+        console.error('error encontrado', error.message);
+    }
+    }
+    
 
-main();
+    main(); 
