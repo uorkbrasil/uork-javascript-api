@@ -1,7 +1,7 @@
 const axios = require('axios');
 const readline = require('readline');
 
-const apiKey = 'FqFQiW9OmKgINpImjpkM6VywPxwGOXYXXNFteoDC2UtZDzd9T3p_DXuH4rEb';
+const apiKey = 'YOUR_API_KEY';
 const api = `https://uork.org/search/status/check-account.php?apikey=${apiKey}&id=`;
 
 function getUserInput(quest) {
